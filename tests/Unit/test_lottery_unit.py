@@ -45,8 +45,8 @@ def test_can_start_and_enter_lottery():
     # Arrange
     lottery = deploy_lottery()
     account = get_account()
-    lottery.startLottery({"from": account})
     # Act
+    lottery.startLottery({"from": account})
     lottery.enter({"from": account, "value": lottery.getEntranceFee()})
     # Assert
     assert lottery.players(0) == account
